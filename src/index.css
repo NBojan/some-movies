@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-mainBack: #f1f5f8;
+  --clr-mainBack2: #f8f9fa;
+  --clr-darkmode1: #181818;
+  --clr-darkmode2: #282c35;
+  --clr-gold: #c59d5f;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+  
+  --clr-bcg: #f1f5f8;
+  --clr-titles: #222;
+  --clr-font: hsl(211, 39%, 23%);
+  --clr-redDL: hsl(360, 67%, 44%);
+  --clr-infoBg: rgba(0, 0, 0, 0.6);
+  --clr-infoCol: #fff;
+  --clr-primHover: hsl(205, 63%, 48%);
+}
+.dark-mode {
+  --clr-bcg: #282c35;
+  --clr-titles: hsl(205, 86%, 81%);
+  --clr-font: #fff;
+  --clr-redDL: hsl(360, 71%, 66%);
+  --clr-infoBg: rgba(255, 255, 255, 0.8);
+  --clr-infoCol: #000;
+  --clr-primHover: hsl(205, 89%, 70%);
+}
+/**/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+  'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  background-color: var(--clr-bcg);
+  transition: all .2s linear;
+}
+
+.smallContainer {
+  width: 90%;
+  max-width: 420px;
+}
+
+.title-color {
+  color: var(--clr-titles);
+}
+.font-color {
+  color: var(--clr-font);
+}
+
+/*search form*/
+.search h3 {
+  margin-bottom: 18px;
+}
+.search input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 8px;
+}
+.search input:focus {
+  outline: 2px solid var(--clr-primary-5);
+}
+.errMsg {
+  color: var(--clr-redDL);
+}
+/*toggle*/
+.toggleBtn {
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+/*movie cards*/
+.movie {
+  flex-basis: 23%;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.movie a {
+  display: flex;
+  flex-direction: column;
+}
+.movie img {
+  width: 100%;
+  height: 400px;
+}
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px 12px;
+  color: var(--clr-infoCol);
+  background-color: var(--clr-infoBg);
+  transform: translateY(100%);
+  transition: .1s linear;
+}
+.info h4 {
+  margin-bottom: 6px;
+}
+.movie:hover .info {
+  transform: translateY(0);
+}
+
+/*single movie*/
+.single-movie-container {
+  max-width: 900px;
+}
+.img-cont {
+  flex-basis: 40%;
+  margin-right: 32px;
+}
+.single-info {
+  flex-basis: 60%;
+}
+.img-cont img {
+  width: 100%;
+  object-fit: cover;
+}
+.backBtn {
+  color: #fff;
+  background-color: var(--clr-primary-5);
+}
+.btn:hover {
+  background-color: var(--clr-primHover);
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .movie {
+    flex-basis: 30%;
+    margin-bottom: 36px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .movie {
+    flex-basis: 30%;
+    margin-bottom: 36px;
+  }
+}
+@media (max-width: 767px){
+  .movie {
+    flex-basis: 48%;
+    margin-bottom: 22px;
+  }
+}
+@media (max-width: 575px){
+	.containerBoot {
+		width: 90%;
+	}
+  .movie {
+    flex-basis: 100%;
+  }
+  .single-movie {
+    flex-wrap: wrap;
+  }
+  .img-cont {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+  .single-info {
+    flex-basis: 100%;
+  }
+}
